@@ -1,8 +1,10 @@
 ---
 title: Master Detail with React, Crystallize, Apollo and GraphQL  
-author: Eric S Bishard 
+author: Eric Bishard 
 date: 2019-11-14
 excerpt: With Crystallize, you can create structured content with products of any shape and easily render them in your decoupled front-end app.
+secret: true
+slug: crystallize-assignment
 ---
 
 # Master Detail with React, Crystallize, Apollo and GraphQL 
@@ -17,7 +19,7 @@ Creating a place to organize your ecommerce products is simple with [Crystallize
 
 As the owner of a tenant on Crystallize, I can test my queries out in our [Crystallize GraphQL interface](https://api.crystallize.com/graphql) to visualize my data:
 
-> Notice the GraphQL query is a hierarchy of nested data that in a normal REST endpoint might take several round trips to retrieve. We just walk the Graph and we can cherry pick what we want! Try the following query in the Crystallize GraphiQL IDE:
+Notice the GraphQL query is a hierarchy of nested data that in a normal REST endpoint might take several round trips to retrieve. We just walk the Graph and we can cherry pick what we want! Try the following query in the Crystallize GraphiQL IDE:
 
 ```
 {
@@ -60,7 +62,7 @@ CRA uses Yarn so we will also use Yarn in our commands to build our application,
 
 We should now see our application and the component you see being displayed can be located in the `src/App.js` file:
 
-![](C:\articles\rsom-blog-staging\posts\2019-11-12-adding-crystallize-products-using-graphql\images\cra-app-initial.png)
+![](images\cra-app-initial.png)
 
 ## Adding Dependencies
 
@@ -78,7 +80,7 @@ yarn add react-router-dom simple-flexbox
 
 With these installed we are ready to prepare our application, let's take a look at a wireframe mockup I made to help concept and visualize what I'm trying to build.
 
-![](C:\articles\rsom-blog-staging\posts\2019-11-12-adding-crystallize-products-using-graphql\images\crystallize-master-detail-wireframe.jpg)
+![](images\crystallize-master-detail-wireframe.jpg)
 
 When we first visit our application, the url will be root `'/'` and our router will catch root and the `'/illustrations' ` path to a page that lists out our products as links on the left side of the page. To the right side will be a placeholder SVG in the spot where our illustration images should load, below it, we will have the text: **Select Illustration**. When a product link is clicked on we will see the image, name and price for that product appear in on the right.
 
@@ -308,7 +310,7 @@ Alright, let's run our app:
 
 `yarn start`
 
-![illustrator-master-detail preview](C:\articles\rsom-blog-staging\posts\2019-11-12-adding-crystallize-products-using-graphql\images\illustration-master-detail-one.gif)
+![illustrator-master-detail preview](images\illustration-master-detail-one.gif)
 
 ## Adding Our Crystallize Data for Illustrations
 
@@ -360,7 +362,7 @@ We have added an import for our HOC and replaced the original export of our `Ill
 
 If we step into react Dev Tools we can see that our `ApolloProvider` is now wrapped around our `IllustrationMasterDetail` component.
 
-![ApolloProvider wrapping our component](C:\articles\rsom-blog-staging\posts\2019-11-12-adding-crystallize-products-using-graphql\images\apolloprovider.gif)
+![ApolloProvider wrapping our component](images\apolloprovider.gif)
 
 Our next step is to use `gql` from  `apollo-boost` and query our GraphQL, then we will be able to render our `IllustrationList` on the left side and pass some data to it. 
 
@@ -483,7 +485,7 @@ We have only updated the `Illustrations` Route to match on the the product link 
 
 Now our left menu (`IllustrationList`) should be on the page and working, if we click on any product, we should see the URL update!
 
-![left side menu](C:\articles\rsom-blog-staging\posts\2019-11-12-adding-crystallize-products-using-graphql\images\left-side-menu.gif)
+![left side menu](images\left-side-menu.gif)
 
 This is some progress, let's add the code to the `IllustrationDetails` component:
 
@@ -556,7 +558,7 @@ I have added three sections of code we need to update, as well I kept a few line
 
 With this last code update, we should be able to see everything in action now!
 
-![final stage of app](C:\articles\rsom-blog-staging\posts\2019-11-12-adding-crystallize-products-using-graphql\images\illustration-master-detail-final.gif)
+![final stage of app](images\illustration-master-detail-final.gif)
 
 I hope you learned a little more about React, Crystallize API or both. 
 
@@ -585,4 +587,3 @@ Resources for Learning React
 - [Higher Order Components]( https://reactjs.org/docs/higher-order-components.html)
 - [Introducing Hooks](https://reactjs.org/docs/hooks-intro.html)
 - [React Community Support](https://reactjs.org/community/support.html)
-
