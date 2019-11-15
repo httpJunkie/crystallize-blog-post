@@ -203,9 +203,10 @@ const App = () => {
   <div className="app-container pad-one">
     <BrowserRouter>
       <Switch>
-       <Route exact path={["/illustrations/", "/"]}
-         render={(props) => <IllustrationMasterDetail {...props} 
-           baseUrl={`/illustrations`} />}
+       <Route exact path={["/illustrations/", "/"]} 
+        render={(props) => 
+          <IllustrationMasterDetail {...props} baseUrl={`/illustrations`} />
+        }
        />
        <Route component={Error404} />
       </Switch>
@@ -267,7 +268,9 @@ import http404 from './404.png';
 function NoMatch ({ location }) {
   return (
     <div style={{padding: '1em', textAlign: 'center'}}>
-      path: <code>{location.pathname}</code> not found, <Link className='menu' to={`/`}> wanna get away?</Link><br />
+      path: <code>{location.pathname}</code> not found, 
+      <Link className='menu' to={`/`}> wanna get away?</Link>
+      <br />
       <img width="300px" src={http404} alt="" />
     </div>
   )
